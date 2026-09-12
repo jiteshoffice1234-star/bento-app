@@ -1,0 +1,192 @@
+.habits-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--sp-6);
+}
+
+.habits-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sp-6);
+}
+
+.habits-content { flex: 1; overflow-y: auto; }
+
+.habits-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.habit-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-normal);
+}
+
+.habit-card:hover {
+  border-color: var(--border-secondary);
+}
+
+.habit-card.disabled { opacity: 0.5; }
+
+.habit-info { flex: 1; padding-right: var(--sp-5); }
+
+.habit-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+.habit-title-row h3 { margin: 0; font-size: var(--font-size-h3); }
+
+.frequency-badge {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.habit-desc {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--font-size-small);
+  color: var(--text-tertiary);
+}
+
+.habit-stats {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-size: var(--font-size-small);
+}
+
+.streak-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+}
+.active-flame { color: var(--accent-warning); fill: var(--accent-warning); }
+.stat-text { color: var(--text-tertiary); }
+
+.habit-actions-section {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+}
+
+.weekly-progress { display: flex; gap: 4px; }
+
+.day-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-secondary);
+  transition: all var(--transition-fast);
+}
+
+.complete-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.complete-btn:hover:not(:disabled) { transform: scale(1.08); }
+.complete-btn:disabled { cursor: not-allowed; opacity: 0.4; }
+
+.habit-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+  border-left: 1px solid var(--border-primary);
+  padding-left: var(--sp-4);
+}
+
+/* ━━━ Form Elements ━━━ */
+.form-select {
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+  font-family: inherit;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.form-group input[type="number"] {
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+  font-family: inherit;
+  width: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* ━━━ Toggle Switch ━━━ */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--border-secondary);
+  transition: .3s;
+  border-radius: var(--radius-full);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--accent-primary); }
+input:checked + .slider:before { transform: translateX(16px); }
+
+@media (max-width: 768px) {
+  .habit-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-4);
+  }
+  .habit-info {
+    padding-right: 0;
+    border-bottom: 1px solid var(--border-primary);
+    padding-bottom: var(--sp-4);
+  }
+  .habit-actions-section { justify-content: space-between; }
+}

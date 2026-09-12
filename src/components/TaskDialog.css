@@ -1,0 +1,227 @@
+.task-dialog {
+  max-width: 560px;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-row {
+  display: flex;
+  gap: var(--sp-3);
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.form-input {
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-body);
+  background: var(--bg-primary);
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-subtle);
+}
+
+.title-input {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  padding: var(--sp-3);
+}
+
+.form-input.small {
+  padding: var(--sp-1) var(--sp-2);
+  font-size: var(--font-size-small);
+}
+
+/* ━━━ Priority Selector ━━━ */
+.priority-selector {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.priority-chip {
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-primary);
+  text-transform: capitalize;
+  transition: all var(--transition-fast);
+}
+
+.priority-chip:hover {
+  border-color: var(--border-secondary);
+}
+
+.priority-chip.none.active { background: var(--text-tertiary); color: var(--text-inverse); border-color: transparent; }
+.priority-chip.low.active { background: var(--priority-medium); color: #ffffff; border-color: transparent; }
+.priority-chip.medium.active { background: var(--priority-medium); color: #ffffff; border-color: transparent; }
+.priority-chip.high.active { background: var(--priority-high); color: var(--text-inverse); border-color: transparent; }
+.priority-chip.urgent.active { background: var(--priority-urgent); color: #ffffff; border-color: transparent; }
+
+/* ━━━ Subtasks ━━━ */
+.subtasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--font-size-body);
+  padding: var(--sp-1) 0;
+}
+
+.subtask-item input[type="checkbox"] {
+  accent-color: var(--accent-primary);
+}
+
+.subtask-item .completed {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.add-subtask {
+  display: flex;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+}
+
+/* ━━━ Tags ━━━ */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.tag-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+.tag-chip button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+}
+.tag-chip button:hover { color: var(--accent-danger); }
+
+.tag-input {
+  width: 120px;
+}
+
+/* ━━━ Dialog Footer ━━━ */
+.dialog-header {
+  padding: var(--sp-5);
+  border-bottom: 1px solid var(--border-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dialog-header h2 {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+}
+
+.dialog-footer {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--border-primary);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+}
+
+/* ━━━ Icon Buttons ━━━ */
+.icon-btn, .icon-btn-small {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+.icon-btn { width: 32px; height: 32px; }
+.icon-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.icon-btn-small { width: 24px; height: 24px; }
+.icon-btn-small:hover { color: var(--accent-danger); }
+
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+.btn-small:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* ━━━ Form Button Overrides ━━━ */
+.dialog .btn-primary {
+  background: var(--accent-primary);
+  color: var(--text-inverse);
+}
+.dialog .btn-primary:hover {
+  background: var(--accent-primary-hover);
+}
+.dialog .btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}

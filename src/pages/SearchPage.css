@@ -1,0 +1,100 @@
+.search-page {
+  padding: var(--sp-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-header {
+  margin-bottom: var(--sp-6);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-large {
+  position: absolute;
+  left: var(--sp-4);
+  color: var(--text-tertiary);
+}
+
+.huge-search-input {
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5) var(--sp-4) var(--sp-12);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  color: var(--text-primary);
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.huge-search-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-primary-subtle);
+}
+
+.huge-search-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.result-group h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-3);
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.result-item:hover {
+  border-color: var(--border-secondary);
+  background: var(--bg-hover);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot.inbox { background: var(--text-tertiary); }
+.status-dot.today { background: var(--accent-primary); }
+.status-dot.upcoming { background: var(--accent-info); }
+.status-dot.completed { background: var(--accent-success); }
+
+.result-content { flex: 1; min-width: 0; }
+.result-content h4 { margin: 0; font-size: var(--font-size-body); font-weight: 500; }
+.result-content p { margin: 2px 0 0; font-size: var(--font-size-small); color: var(--text-tertiary); }
+
+.empty-icon { opacity: 0.3; }

@@ -1,0 +1,213 @@
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(122, 98, 255, 0.20), transparent 32%),
+    radial-gradient(circle at 22% 100%, rgba(231, 150, 76, 0.14), transparent 25%),
+    linear-gradient(180deg, rgba(5, 10, 15, 0.98), rgba(10, 15, 22, 0.96));
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: hidden;
+  padding: 32px 24px;
+}
+
+.onboarding-overlay::before,
+.onboarding-overlay::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.onboarding-overlay::before {
+  width: 180px;
+  height: 180px;
+  background: rgba(220, 165, 94, 0.35);
+  bottom: 14%;
+  right: 16%;
+}
+
+.onboarding-overlay::after {
+  width: 220px;
+  height: 220px;
+  background: rgba(112, 94, 255, 0.22);
+  top: 10%;
+  left: 14%;
+}
+
+.onboarding-container {
+  position: relative;
+  z-index: 1;
+  width: min(1040px, 100%);
+}
+
+.onboarding-step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(720px, 100%);
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.onboarding-step.text-center {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.onboarding-step.onboarding-hero {
+  align-items: flex-start;
+  padding: 24px 0;
+}
+
+.onboarding-brand {
+  margin-bottom: 8px;
+}
+
+.onboarding-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  background: linear-gradient(140deg, rgba(22, 31, 48, 0.95), rgba(60, 62, 92, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 22px 44px rgba(10, 12, 18, 0.75),
+    0 0 28px rgba(233, 164, 84, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.onboarding-logo::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(128, 104, 255, 0.9), rgba(125, 172, 255, 0.9) 30%, rgba(223, 154, 72, 0.9));
+  transform: rotate(12deg);
+  box-shadow: inset 0 0 18px rgba(255,255,255,0.14);
+}
+
+.onboarding-logo-mark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(11,15,23,0.72), rgba(15,19,32,0.76));
+  color: #f8f8ff;
+  font-weight: 800;
+  font-size: 36px;
+  letter-spacing: -0.08em;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.onboarding-hero h1 {
+  margin: 0;
+  font-size: clamp(4rem, 6vw, 7.1rem);
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+  font-weight: 800;
+  color: #f6f7fb;
+  text-wrap: balance;
+}
+
+.onboarding-hero p {
+  margin: 0;
+  max-width: 700px;
+  font-size: clamp(1.1rem, 1.8vw, 1.8rem);
+  line-height: 1.33;
+  color: rgba(223, 229, 236, 0.78);
+  letter-spacing: -0.03em;
+}
+
+.onboarding-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.btn-large {
+  min-height: 62px;
+  padding: 16px 28px;
+  border-radius: 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.btn-quiet {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(245,247,251,0.9);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+.btn-quiet:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.onboarding-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.progress-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.16);
+}
+
+.progress-dot.active {
+  background: rgba(246, 191, 98, 0.95);
+  box-shadow: 0 0 18px rgba(246, 191, 98, 0.55);
+}
+
+.progress-dot.completed {
+  background: rgba(161, 180, 255, 0.85);
+}
+
+@media (max-width: 640px) {
+  .onboarding-step {
+    width: 100%;
+  }
+
+  .onboarding-logo {
+    width: 94px;
+    height: 94px;
+  }
+
+  .onboarding-hero h1 {
+    font-size: clamp(2.8rem, 18vw, 5.1rem);
+  }
+
+  .onboarding-hero p {
+    font-size: 1.08rem;
+  }
+
+  .onboarding-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-large {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,206 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  padding: var(--sp-8);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.save-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  background: var(--accent-success);
+  color: var(--text-inverse);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-sm);
+}
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.settings-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.card-header-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.card-header-icon h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.accent-icon { color: var(--accent-primary); }
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border-primary);
+}
+
+.setting-row.danger-row { border-top-color: var(--accent-danger-subtle); }
+
+.setting-label {
+  font-size: var(--font-size-body);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.setting-desc {
+  font-size: var(--font-size-small);
+  color: var(--text-tertiary);
+  margin: 2px 0 0;
+}
+
+.setting-input { min-width: 200px; }
+
+.theme-toggle-group {
+  display: flex;
+  gap: var(--sp-1);
+  background: var(--bg-tertiary);
+  padding: 3px;
+  border-radius: var(--radius-md);
+}
+
+.theme-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-2) var(--sp-3);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.theme-btn.active {
+  background: var(--bg-elevated);
+  color: var(--accent-primary);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.key-input-wrapper {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.about-text {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.about-meta {
+  display: flex;
+  gap: var(--sp-5);
+  font-size: var(--font-size-small);
+  color: var(--text-tertiary);
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--border-primary);
+}
+
+.subtitle {
+  font-size: var(--font-size-body);
+  color: var(--text-tertiary);
+  margin-top: var(--sp-1);
+}
+
+.reset-error {
+  margin-top: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--accent-danger);
+  font-size: var(--font-size-small);
+}
+
+.reset-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 10, 18, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  z-index: 1000;
+}
+
+.reset-modal {
+  width: min(100%, 440px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.reset-modal-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-danger);
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.reset-modal h3 {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  color: var(--text-primary);
+}
+
+.reset-modal p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.reset-modal-warning {
+  color: var(--accent-danger) !important;
+  font-weight: 600;
+}
+
+.reset-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+  margin-top: var(--sp-2);
+}
+
+@media (max-width: 640px) {
+  .settings-page { padding: var(--sp-5); }
+  .setting-row { flex-direction: column; align-items: flex-start; }
+  .setting-input { width: 100%; }
+  .about-meta { flex-direction: column; gap: var(--sp-1); }
+  .reset-modal-actions { flex-direction: column-reverse; }
+  .reset-modal-actions .btn { width: 100%; }
+}
