@@ -47,7 +47,7 @@ export function getFilteredTransactions(
 
   if (period === 'all') return normalized;
 
-  const daysMap: Record<FinancePeriod, number> = {
+  const daysMap: Record<Exclude<FinancePeriod, 'all'>, number> = {
     week: 7,
     month: 30,
     year: 365,

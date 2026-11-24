@@ -77,20 +77,21 @@ const clearIndexedDB = async (): Promise<string[]> => {
       : [];
 
     for (const db of dbNames) {
-      if (!db.name) continue;
+      const dbName = db.name;
+      if (!dbName) continue;
       try {
         await new Promise<void>((resolve, reject) => {
-          const request = indexedDB.deleteDatabase(db.name);
+          const request = indexedDB.deleteDatabase(dbName);
           request.onsuccess = () => resolve();
           request.onerror = () => reject(request.error ?? new Error('IndexedDB delete failed'));
           request.onblocked = () => {
-            console.warn('[Bento] IndexedDB deletion blocked for', db.name);
+            console.warn('[Bento] IndexedDB deletion blocked for', dbName);
             resolve();
           };
         });
       } catch (error) {
-        errors.push(`indexedDB:${db.name}`);
-        console.error('[Bento] Failed to clear IndexedDB database:', db.name, error);
+        errors.push(`indexedDB:${dbName}`);
+        console.error('[Bento] Failed to clear IndexedDB database:', dbName, error);
       }
     }
   } catch (error) {

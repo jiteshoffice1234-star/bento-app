@@ -22,6 +22,7 @@ import {
   formatCurrency,
   normalizeDate,
   parseMoney,
+  toISODateString,
 } from '../utils/finance';
 import { FINANCE_EXPENSE_CATEGORIES, FINANCE_INCOME_CATEGORIES } from '../types';
 import './FinancePage.css';
@@ -43,7 +44,7 @@ export function FinancePage() {
   const [period, setPeriod] = useState<'week' | 'month' | 'year' | 'all'>('month');
   const [showAdd, setShowAdd] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [form, setForm] = useState({ type: 'expense', amount: '', category: '', description: '', date: normalizeDate(new Date()), notes: '' });
+  const [form, setForm] = useState({ type: 'expense', amount: '', category: '', description: '', date: toISODateString(new Date()), notes: '' });
 
   const filtered = useMemo(() => getFilteredTransactions(financialTransactions, period), [financialTransactions, period]);
   const summary = useMemo(() => calculateFinancialSummary(filtered), [filtered]);
@@ -53,7 +54,7 @@ export function FinancePage() {
   const accountBalance = useMemo(() => financialAccounts.reduce((s, a) => s + Number(a.balance || 0), 0), [financialAccounts]);
 
   function resetForm() {
-    setForm({ type: 'expense', amount: '', category: '', description: '', date: normalizeDate(new Date()), notes: '' });
+    setForm({ type: 'expense', amount: '', category: '', description: '', date: toISODateString(new Date()), notes: '' });
     setEditingId(null);
   }
 
