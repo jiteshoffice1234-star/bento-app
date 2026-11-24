@@ -1,14 +1,16 @@
+> **Note:** This is the older Bento v2.0 codebase. Active development has moved to [BENTO-2.0](https://github.com/jiteshoffice1234-star/BENTO-2.0). Please download releases and report issues there.
+
 <div align="center">
 
 # BENTO
 
 **Your all-in-one personal productivity app**
 
-[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/jiteshoffice1234-star/bento-2/releases)
+[![Version](https://img.shields.io/badge/version-2.1.0-blue.svg)](https://github.com/jiteshoffice1234-star/BENTO-2.0/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)](https://github.com/jiteshoffice1234-star/bento-2/releases)
+[![Platform](https://img.shields.io/badge/platform-Android-lightgrey.svg)](https://github.com/jiteshoffice1234-star/BENTO-2.0/releases)
 
-[Download APK](https://github.com/jiteshoffice1234-star/bento-2/releases/latest) • [Report Bug](https://github.com/jiteshoffice1234-star/bento-2/issues)
+[Download APK](https://github.com/jiteshoffice1234-star/BENTO-2.0/releases/latest) • [Report Bug](https://github.com/jiteshoffice1234-star/BENTO-2.0/issues)
 
 </div>
 
@@ -76,7 +78,7 @@ npm run cap:open:android
 
 ## Download
 
-Download the latest APK from [Releases](https://github.com/jiteshoffice1234-star/bento-2/releases/latest).
+Download the latest APK from [Releases](https://github.com/jiteshoffice1234-star/BENTO-2.0/releases/latest).
 
 | File | Description |
 |------|-------------|
